@@ -5,13 +5,9 @@ import openai
 import os
 from dotenv import load_dotenv
 
-import streamlit as st
-# ... other imports ...
-
-# Force Streamlit to bind to all interfaces for Railway
-import os
-os.environ['SERVER_ADDRESS'] = '0.0.0.0'
-os.environ['SERVER_PORT'] = str(os.getenv('PORT', 8501))
+# Fix for Railway 502: Force bind to 0.0.0.0 and $PORT
+os.environ["STREAMLIT_SERVER_ADDRESS"] = "0.0.0.0"
+os.environ["STREAMLIT_SERVER_PORT"] = str(os.getenv("PORT", 8501))
 
 load_dotenv()
 
