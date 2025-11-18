@@ -5,13 +5,13 @@ import openai
 import os
 from dotenv import load_dotenv
 
-# Fix for Railway 502: Force bind to 0.0.0.0 and $PORT
 os.environ["STREAMLIT_SERVER_ADDRESS"] = "0.0.0.0"
 os.environ["STREAMLIT_SERVER_PORT"] = str(os.getenv("PORT", 8501))
+os.environ["STREAMLIT_BROWSER_GATHER_USAGE_STATS"] = "false"
 
 load_dotenv()
 
-openai.api_key = os.getenv("OPENAI_API_KEY")  # or st.secrets
+openai.api_key = os.getenv("OPENAI_API_KEY") 
 
 st.set_page_config(page_title="LinkedIn Icebreaker AI", page_icon="💬")
 st.title("LinkedIn Icebreaker AI")
