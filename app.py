@@ -13,9 +13,6 @@ import os
 os.environ['SERVER_ADDRESS'] = '0.0.0.0'
 os.environ['SERVER_PORT'] = str(os.getenv('PORT', 8501))
 
-st.set_page_config(page_title="LinkedIn Icebreaker AI", page_icon="💬")
-# ... rest of your code unchanged ...
-
 load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")  # or st.secrets
