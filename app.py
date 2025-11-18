@@ -5,6 +5,17 @@ import openai
 import os
 from dotenv import load_dotenv
 
+import streamlit as st
+# ... other imports ...
+
+# Force Streamlit to bind to all interfaces for Railway
+import os
+os.environ['SERVER_ADDRESS'] = '0.0.0.0'
+os.environ['SERVER_PORT'] = str(os.getenv('PORT', 8501))
+
+st.set_page_config(page_title="LinkedIn Icebreaker AI", page_icon="💬")
+# ... rest of your code unchanged ...
+
 load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")  # or st.secrets
