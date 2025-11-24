@@ -5,8 +5,8 @@ import openai
 import os
 from dotenv import load_dotenv
 
-os.environ["STREAMLIT_SERVER_ADDRESS"] = "0.0.0.0"
-os.environ["STREAMLIT_SERVER_PORT"] = str(os.getenv("PORT", 8501))
+server_address = os.environ["STREAMLIT_SERVER_ADDRESS"]
+server_port = os.environ["STREAMLIT_SERVER_PORT"] = str(os.getenv("PORT", 8501))
 os.environ["STREAMLIT_BROWSER_GATHER_USAGE_STATS"] = "false"
 
 load_dotenv()
